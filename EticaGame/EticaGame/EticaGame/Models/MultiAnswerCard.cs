@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace eTICa_mente.Models
+namespace EticaGame.Models
 {
     class MultiAnswerCard<CType> :QCard<CType>
     {

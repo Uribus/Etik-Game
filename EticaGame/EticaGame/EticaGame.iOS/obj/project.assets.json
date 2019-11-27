@@ -1011,11 +1011,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jdrec\\source\\repos\\EticaGame\\EticaGame\\EticaGame.iOS\\EticaGame.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\jdrec\\source\\repos\\EGame\\Etik-Game\\EticaGame\\EticaGame\\EticaGame.iOS\\EticaGame.iOS.csproj",
       "projectName": "EticaGame.iOS",
-      "projectPath": "C:\\Users\\jdrec\\source\\repos\\EticaGame\\EticaGame\\EticaGame.iOS\\EticaGame.iOS.csproj",
+      "projectPath": "C:\\Users\\jdrec\\source\\repos\\EGame\\Etik-Game\\EticaGame\\EticaGame\\EticaGame.iOS\\EticaGame.iOS.csproj",
       "packagesPath": "C:\\Users\\jdrec\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jdrec\\source\\repos\\EticaGame\\EticaGame\\EticaGame.iOS\\obj\\",
+      "outputPath": "C:\\Users\\jdrec\\source\\repos\\EGame\\Etik-Game\\EticaGame\\EticaGame\\EticaGame.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1036,8 +1036,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\jdrec\\source\\repos\\EticaGame\\EticaGame\\EticaGame\\EticaGame.csproj": {
-              "projectPath": "C:\\Users\\jdrec\\source\\repos\\EticaGame\\EticaGame\\EticaGame\\EticaGame.csproj"
+            "C:\\Users\\jdrec\\source\\repos\\EGame\\Etik-Game\\EticaGame\\EticaGame\\EticaGame\\EticaGame.csproj": {
+              "projectPath": "C:\\Users\\jdrec\\source\\repos\\EGame\\Etik-Game\\EticaGame\\EticaGame\\EticaGame\\EticaGame.csproj"
             }
           }
         }

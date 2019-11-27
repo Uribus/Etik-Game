@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jdrec\\source\\repos\\EticaGame\\EticaGame\\EticaGame.Android\\EticaGame.Android.csproj": {}
+    "C:\\Users\\jdrec\\source\\repos\\EGame\\Etik-Game\\EticaGame\\EticaGame\\EticaGame.Android\\EticaGame.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jdrec\\source\\repos\\EticaGame\\EticaGame\\EticaGame.Android\\EticaGame.Android.csproj": {
+    "C:\\Users\\jdrec\\source\\repos\\EGame\\Etik-Game\\EticaGame\\EticaGame\\EticaGame.Android\\EticaGame.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jdrec\\source\\repos\\EticaGame\\EticaGame\\EticaGame.Android\\EticaGame.Android.csproj",
+        "projectUniqueName": "C:\\Users\\jdrec\\source\\repos\\EGame\\Etik-Game\\EticaGame\\EticaGame\\EticaGame.Android\\EticaGame.Android.csproj",
         "projectName": "EticaGame.Android",
-        "projectPath": "C:\\Users\\jdrec\\source\\repos\\EticaGame\\EticaGame\\EticaGame.Android\\EticaGame.Android.csproj",
+        "projectPath": "C:\\Users\\jdrec\\source\\repos\\EGame\\Etik-Game\\EticaGame\\EticaGame\\EticaGame.Android\\EticaGame.Android.csproj",
         "packagesPath": "C:\\Users\\jdrec\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jdrec\\source\\repos\\EticaGame\\EticaGame\\EticaGame.Android\\obj\\",
+        "outputPath": "C:\\Users\\jdrec\\source\\repos\\EGame\\Etik-Game\\EticaGame\\EticaGame\\EticaGame.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "C:\\Users\\jdrec\\source\\repos\\EticaGame\\EticaGame\\EticaGame\\EticaGame.csproj": {
-                "projectPath": "C:\\Users\\jdrec\\source\\repos\\EticaGame\\EticaGame\\EticaGame\\EticaGame.csproj"
+              "C:\\Users\\jdrec\\source\\repos\\EGame\\Etik-Game\\EticaGame\\EticaGame\\EticaGame\\EticaGame.csproj": {
+                "projectPath": "C:\\Users\\jdrec\\source\\repos\\EGame\\Etik-Game\\EticaGame\\EticaGame\\EticaGame\\EticaGame.csproj"
               }
             }
           }
@@ -58,14 +58,14 @@
         }
       }
     },
-    "C:\\Users\\jdrec\\source\\repos\\EticaGame\\EticaGame\\EticaGame\\EticaGame.csproj": {
+    "C:\\Users\\jdrec\\source\\repos\\EGame\\Etik-Game\\EticaGame\\EticaGame\\EticaGame\\EticaGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jdrec\\source\\repos\\EticaGame\\EticaGame\\EticaGame\\EticaGame.csproj",
+        "projectUniqueName": "C:\\Users\\jdrec\\source\\repos\\EGame\\Etik-Game\\EticaGame\\EticaGame\\EticaGame\\EticaGame.csproj",
         "projectName": "EticaGame",
-        "projectPath": "C:\\Users\\jdrec\\source\\repos\\EticaGame\\EticaGame\\EticaGame\\EticaGame.csproj",
+        "projectPath": "C:\\Users\\jdrec\\source\\repos\\EGame\\Etik-Game\\EticaGame\\EticaGame\\EticaGame\\EticaGame.csproj",
         "packagesPath": "C:\\Users\\jdrec\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jdrec\\source\\repos\\EticaGame\\EticaGame\\EticaGame\\obj\\",
+        "outputPath": "C:\\Users\\jdrec\\source\\repos\\EGame\\Etik-Game\\EticaGame\\EticaGame\\EticaGame\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
