@@ -1,4 +1,4 @@
-﻿using EticaGame.Models;
+﻿using EticaGame.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,24 +13,10 @@ namespace EticaGame.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GameView : ContentPage
     {
-        public ListView Lista { get { return listDetails; } }
-        public List<MenuItems> items;
-
         public GameView()
         {
             InitializeComponent();
-            SetItems();
-        }
-
-        void SetItems()
-        {
-            //initialize the list with the elements within
-            items = new List<MenuItems>
-            {
-                new MenuItems("Info", "", Color.AntiqueWhite, typeof(InfoGame))
-            };
-            //tell the view where to look for the data
-            Lista.ItemsSource = items;
+            BindingContext = new GameViewModel();
         }
     }
 }

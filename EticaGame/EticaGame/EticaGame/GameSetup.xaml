@@ -5,11 +5,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="EticaGame.GameSetup">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+
+    <StackLayout>
+        <Label Text="Bienvenido" FontSize="Medium"/>
+        <Entry Placeholder="Name" FontSize="Small"/>
+        <Button Text="move" Clicked="OnStartGameButtonClicked"/>
+    </StackLayout>
 </ContentPage>

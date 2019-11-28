@@ -10,7 +10,7 @@ namespace EticaGame
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new GameSetup());
+            MainPage = new GameSetup();
         }
 
         protected override void OnStart()

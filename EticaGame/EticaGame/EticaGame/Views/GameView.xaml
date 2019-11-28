@@ -4,33 +4,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="EticaGame.Views.GameView">
-    <ContentPage.Content>
-        <StackLayout x:Name="GVStack" VerticalOptions="FillAndExpand">
-
-            <StackLayout x:Name="Top">
-                <Label Text="eTICa-mente" HorizontalOptions="Center" FontSize="Large"/>
-            </StackLayout>
-
-            <StackLayout x:Name="Mid" VerticalOptions="FillAndExpand">
-                <ListView x:Name="listDetails" SeparatorVisibility="None">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Grid>
-                                    <Label Grid.Column="1" Text="{Binding Title}" 
-                                           TextColor="Black" FontSize="Medium"/>
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackLayout>
-
-            <StackLayout x:Name="Bottom" VerticalOptions="FillAndExpand">
-                <Button Text="Nueva partida" BackgroundColor="Red"/>
-            </StackLayout>
-
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="EticaGame.Views.GameView"
+             FlowDirection="LeftToRight">
+    <StackLayout>
+        <CarouselView ItemsSource="{Binding Equipos}"></CarouselView>
+    </StackLayout>
 </ContentPage>

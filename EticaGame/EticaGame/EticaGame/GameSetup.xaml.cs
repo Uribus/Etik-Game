@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EticaGame.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,20 @@ namespace EticaGame
         public GameSetup()
         {
             InitializeComponent();
+
+        }
+
+        [Obsolete]
+        async void OnStartGameButtonClicked(object sender, EventArgs e)
+        {
+            if(Device.OS == TargetPlatform.Android)
+            {
+                Application.Current.MainPage = new MasterDetail();
+            }
+            else if(Device.OS == TargetPlatform.iOS)
+            {
+                await Navigation.PushModalAsync(new MasterDetail());
+            }
         }
     }
 }

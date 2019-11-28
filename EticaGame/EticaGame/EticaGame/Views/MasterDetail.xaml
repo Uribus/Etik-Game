@@ -8,7 +8,7 @@
              mc:Ignorable="d"
              x:Class="EticaGame.Views.MasterDetail">
     <MasterDetailPage.Master>
-        <local:GameView x:Name="masterPage"/>
+        <local:GameMaster x:Name="masterPage"/>
     </MasterDetailPage.Master>
 
     <MasterDetailPage.Detail>

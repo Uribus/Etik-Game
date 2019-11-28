@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using EticaGame.Models;
 
@@ -19,7 +20,7 @@ namespace EticaGame.ViewModels
         List<QCard<CType>> CartasUsadas;
         //action cards
         List<ACard> CartasEspeciales;
-        List<Team> Equipos;
+        ObservableCollection<Team> Equipos;
         bool Start=false;
 
         public GameViewModel()
