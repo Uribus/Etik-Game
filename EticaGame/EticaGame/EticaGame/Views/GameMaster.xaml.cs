@@ -27,8 +27,8 @@ namespace EticaGame.Views
         {
             //initialize the list with the elements within
             items = new List<MenuItems>();
-            items.Add(new MenuItems("Info", "", Color.AntiqueWhite, typeof(InfoGame)));
             items.Add(new MenuItems("Game", "", Color.AntiqueWhite, typeof(GameView)));
+            items.Add(new MenuItems("Info", "", Color.AntiqueWhite, typeof(InfoGame)));
 
             //tell the view where to look for the data
             Lista.ItemsSource = items;

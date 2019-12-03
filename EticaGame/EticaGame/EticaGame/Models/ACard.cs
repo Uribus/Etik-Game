@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EticaGame.Models
 {
-    class ACard
+    public class ACard
     {
         string Title, Explica;
         public ACard(string titulo, string explica)

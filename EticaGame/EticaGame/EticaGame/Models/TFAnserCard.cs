@@ -4,10 +4,10 @@ using System.Text;
 
 namespace EticaGame.Models
 {
-    class TFAnserCard<CType> : QCard<CType>
+    public class TFAnserCard : QCard
     {
         bool RespuestaCorrecta;
-        public TFAnserCard(string pregunta, bool respuesta, CType tema) : base(pregunta, tema)
+        public TFAnserCard(string pregunta, bool respuesta, string tema) : base(pregunta, tema)
         {
             RespuestaCorrecta = respuesta;
         }

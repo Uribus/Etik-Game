@@ -4,10 +4,10 @@ using System.Text;
 
 namespace EticaGame.Models
 {
-    class MultiAnswerCard<CType> :QCard<CType>
+    public class MultiAnswerCard : QCard
     {
         string RespuestaCorrecta, Respuesta2, Respuesta3;
-        public MultiAnswerCard(string pregunta, string respuesta, string res2, string res3, CType tema) : base(pregunta, tema)
+        public MultiAnswerCard(string pregunta, string respuesta, string res2, string res3, string tema) : base(pregunta, tema)
         {
             RespuestaCorrecta = respuesta;
             Respuesta2 = res2;

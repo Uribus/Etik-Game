@@ -1,4 +1,5 @@
 ﻿using EticaGame.Models;
+using EticaGame.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,12 @@ namespace EticaGame.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MasterDetail : MasterDetailPage
-    {
-        public MasterDetail()
+    {   
+        public int Teams;
+        public MasterDetail(int equipos)
         {
             InitializeComponent();
+            this.Teams = equipos;
             masterPage.Lista.ItemSelected += OnItemSelected;
         }
 

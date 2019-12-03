@@ -4,18 +4,18 @@ using System.Text;
 
 namespace EticaGame.Models
 {
-    class QCard<CType>
+    public class QCard
     {
-        CType Tema;
+        string Tema;
         public string Pregunta;
          
-        public QCard(string pregunta, CType tema) 
+        public QCard(string pregunta, string tema) 
         {
             this.Pregunta = pregunta;
             this.Tema = tema;
         }
         
-        public CType GetTema() 
+        public string GetTema() 
         {
             return this.Tema;
         }

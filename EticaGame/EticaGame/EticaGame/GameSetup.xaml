@@ -7,8 +7,31 @@
              x:Class="EticaGame.GameSetup">
 
     <StackLayout>
-        <Label Text="Bienvenido" FontSize="Medium"/>
-        <Entry Placeholder="Name" FontSize="Small"/>
-        <Button Text="move" Clicked="OnStartGameButtonClicked"/>
+        <Label Text="Bienvenido a eTICa-MENTE" FontSize="Title" />
+        <Label Text="Por favor rellena los campos"/>
+        <StackLayout>
+            <StackLayout HorizontalOptions="CenterAndExpand" 
+                         Orientation="Horizontal">
+                <Label Text="Numero de equipos:" FontSize="Medium" TextColor="Black"/>
+            </StackLayout>
+            <Picker x:Name="teams" Title="Equipos" TitleColor="OrangeRed" 
+                        HorizontalOptions="CenterAndExpand" 
+                        Margin="30"
+                        SelectedIndexChanged="OnPickerSelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>3</x:String>
+                    <x:String>4</x:String>
+                    <x:String>5</x:String>
+                    <x:String>6</x:String>
+                </Picker.Items>
+            </Picker>
+        </StackLayout>
+        <StackLayout>
+            <Label Text="Este juego ha sido creado por:"/>
+            <Label Text="fasdfasd, saidfjkhasd, askdjhf"/>
+        </StackLayout>
+        
+        <Button Text="Juego Nuevo" Clicked="OnStartGameButtonClicked" 
+                CornerRadius="30" BackgroundColor="Red"/>
     </StackLayout>
 </ContentPage>

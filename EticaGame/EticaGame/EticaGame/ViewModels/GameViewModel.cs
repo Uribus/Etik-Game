@@ -2,72 +2,89 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Input;
 using EticaGame.Models;
+using Xamarin.Forms;
+using Rg.Plugins.Popup.Services;
+using EticaGame.Views;
+using EticaGame.Views.CardViews;
 
 namespace EticaGame.ViewModels
 {
-    class GameViewModel
+    public class GameViewModel
     {
+        public INavigation Navigation { get; set; }
         enum CType { Brecha, SLibre, ProdDatos, Privacidad, Facts }
         //enum Action { Turno, Tira, Debate, Pierde, Roba }
 
-        List<QCard<CType>> CartasGenero;
-        List<QCard<CType>> CartasSoftware;
-        List<QCard<CType>> CartasProteccion;
-        List<QCard<CType>> CartasPrivacidad;
-        List<QCard<CType>> CartasFacts;
+        List<QCard> CartasGenero;
+        List<QCard> CartasSoftware;
+        List<QCard> CartasProteccion;
+        List<QCard> CartasPrivacidad;
+        List<QCard> CartasFacts;
         //cards that have appeared already in the game
-        List<QCard<CType>> CartasUsadas;
+        List<QCard> CartasUsadas;
         //action cards
         List<ACard> CartasEspeciales;
-        ObservableCollection<Team> Equipos;
+        public ObservableCollection<Team> Equipos { get; private set; } = new ObservableCollection<Team>();
         bool Start=false;
 
-        public GameViewModel()
+        public GameViewModel(INavigation navigation)
         {
             //initialize and fill all the lists
-            LlenarListaBrecha(CType.Brecha);
-            LlenarListaSoftware(CType.SLibre);
-            LlenarListaProteccion(CType.ProdDatos);
-            LlenarListaPrivacidad(CType.Privacidad);
-            LlenarListaFact(CType.Facts);
-            LLenarListaEspeciales();
+            CreaEquipos(4);
+            //LlenarListaBrecha("Brecha");
+            //LlenarListaSoftware("Software");
+            //LlenarListaProteccion("Proteccion");
+            //LlenarListaPrivacidad("Privacidad");
+            //LlenarListaFact("Facts");
+            //LLenarListaEspeciales();
+
+            this.Navigation = navigation;
         }
 
-        void LlenarListaBrecha(CType tipo)
+        void CreaEquipos(int equipos)
         {
-            CartasGenero.Add(new SingleAnswerCard<CType>("", "", tipo));
-            CartasGenero.Add(new TFAnserCard<CType>("", true, tipo));
-            CartasGenero.Add(new MultiAnswerCard<CType>("", "", "", "", tipo));
+            for(int i = 0; i < equipos; i++)
+            {
+                Equipos.Add(new Team(i + 1));
+            }
+        }
+
+        void LlenarListaBrecha(string tipo)
+        {
+            CartasGenero.Add(new SingleAnswerCard("", "", tipo));
+            CartasGenero.Add(new TFAnserCard("", true, tipo));
+            CartasGenero.Add(new MultiAnswerCard("", "", "", "", tipo));
        
         }
 
-        void LlenarListaSoftware(CType tipo)
+        void LlenarListaSoftware(string tipo)
         {
-            CartasSoftware.Add(new SingleAnswerCard<CType>("", "", tipo));
-            CartasSoftware.Add(new TFAnserCard<CType>("", true, tipo));
-            CartasSoftware.Add(new MultiAnswerCard<CType>("", "", "", "", tipo));
+            CartasSoftware.Add(new SingleAnswerCard("", "", tipo));
+            CartasSoftware.Add(new TFAnserCard("", true, tipo));
+            CartasSoftware.Add(new MultiAnswerCard("", "", "", "", tipo));
         }
         
-        void LlenarListaProteccion(CType tipo)
+        void LlenarListaProteccion(string tipo)
         {
-            CartasProteccion.Add(new SingleAnswerCard<CType>("", "", tipo));
-            CartasProteccion.Add(new TFAnserCard<CType>("", true, tipo));
-            CartasProteccion.Add(new MultiAnswerCard<CType>("", "", "", "", tipo));
+            CartasProteccion.Add(new SingleAnswerCard("", "", tipo));
+            CartasProteccion.Add(new TFAnserCard("", true, tipo));
+            CartasProteccion.Add(new MultiAnswerCard("", "", "", "", tipo));
         }
 
-        void LlenarListaPrivacidad(CType tipo)
+        void LlenarListaPrivacidad(string tipo)
         {
-            CartasPrivacidad.Add(new SingleAnswerCard<CType>("", "", tipo));
-            CartasPrivacidad.Add(new TFAnserCard<CType>("", true, tipo));
-            CartasPrivacidad.Add(new MultiAnswerCard<CType>("", "", "", "", tipo));
+            CartasPrivacidad.Add(new SingleAnswerCard("", "", tipo));
+            CartasPrivacidad.Add(new TFAnserCard("", true, tipo));
+            CartasPrivacidad.Add(new MultiAnswerCard("", "", "", "", tipo));
         }
 
-        void LlenarListaFact(CType tipo)
+        void LlenarListaFact(string tipo)
         {
-            CartasFacts.Add(new SingleAnswerCard<CType>("", "", tipo));
-            CartasFacts.Add(new TFAnserCard<CType>("", true, tipo));
-            CartasFacts.Add(new MultiAnswerCard<CType>("", "", "", "", tipo));
+            CartasFacts.Add(new SingleAnswerCard("", "", tipo));
+            CartasFacts.Add(new TFAnserCard("", true, tipo));
+            CartasFacts.Add(new MultiAnswerCard("", "", "", "", tipo));
         }
 
         void LLenarListaEspeciales()
@@ -79,32 +96,47 @@ namespace EticaGame.ViewModels
         }
 
         //move the used card from original list to used list so that it won't repeat
-        void TraspasarUsadas(QCard<CType> carta)
+        void TraspasarUsadas(QCard carta)
         {
-            int k = (int)carta.GetTema();
+            string k = carta.GetTema();
             switch (k)
             {
-                case 0:
+                case "Brecha":
                     CartasUsadas.Add(carta);
                     CartasGenero.Remove(carta);
                     break;
-                case 1:
+                case "Software":
                     CartasUsadas.Add(carta);
                     CartasSoftware.Remove(carta);
                     break;
-                case 2:
+                case "Proteccion":
                     CartasUsadas.Add(carta);
                     CartasProteccion.Remove(carta);
                     break;
-                case 3:
+                case "Privacidad":
                     CartasUsadas.Add(carta);
                     CartasPrivacidad.Remove(carta);
                     break;
-                case 4:
+                case "Facts":
                     CartasUsadas.Add(carta);
                     CartasFacts.Remove(carta);
                     break;
             }
+        }
+
+        public ICommand GoNextCard
+        {
+            get
+            {
+                return new Command<string>((x) => CallCardView(x));
+            }
+        }
+        async void CallCardView(string x)
+        {
+            ColorTypeConverter converter = new ColorTypeConverter();
+            QCard carta = new QCard("",x);
+            Color color = (Color)(converter.ConvertFromInvariantString(x));
+            await Navigation.PushAsync(new SingleACard(color));
         }
     }
 }

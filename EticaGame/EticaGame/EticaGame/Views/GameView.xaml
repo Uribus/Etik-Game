@@ -3,10 +3,72 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:EticaGame.ViewModels"
              mc:Ignorable="d"
              x:Class="EticaGame.Views.GameView"
-             FlowDirection="LeftToRight">
+             FlowDirection="LeftToRight"
+             NavigationPage.HasNavigationBar="False">
+    
     <StackLayout>
-        <CarouselView ItemsSource="{Binding Equipos}"></CarouselView>
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="85"/>
+                    <ColumnDefinition Width="85"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Text="Info" Clicked="OnInfoClicked" HorizontalOptions="StartAndExpand" BackgroundColor="Black" TextColor="Yellow" FontAttributes="Bold"/>
+                <Button Grid.Column="3" Text="Reglas" Clicked="OnReglasClicked" HorizontalOptions="EndAndExpand" BackgroundColor="Black" TextColor="Yellow" FontAttributes="Bold"/>
+            </Grid>
+        </StackLayout>
+        <CarouselView ItemsSource="{Binding Equipos}" PeekAreaInsets="50">
+            <CarouselView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal"/>
+            </CarouselView.ItemsLayout>
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Frame HasShadow="True" BorderColor="BlueViolet"
+                               CornerRadius="5" Margin="20">
+                            <StackLayout>
+                                <Label Text="{Binding Name}" FontAttributes="Bold"
+                                   FontSize="Medium" TextColor="Black" 
+                                   VerticalOptions="StartAndExpand"/>
+                                <Label Text="{Binding Aciertos}" TextColor="ForestGreen"/>
+                                <Label Text="{Binding Fallos}" TextColor="Red"/>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <Label Text="Turno:" HorizontalOptions="CenterAndExpand" FontSize="Title" TextColor="Black"/>
+        <Label x:Name="tocaTurno" Text="Equipo 1" HeightRequest="120" HorizontalOptions="CenterAndExpand" FontSize="75" TextColor="Black"/>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="StartAndExpand">
+            <Grid HorizontalOptions="Center" Margin="12"> 
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Column="0" Grid.Row="0" Text="Brecha de Género" BackgroundColor="Violet" Command="{Binding GoNextCard}" CommandParameter="Violet"/>
+                <Button Grid.Column="0" Grid.Row="1" Text="Software Libre" BackgroundColor="ForestGreen" Command="{Binding GoNextCard}" CommandParameter="ForestGreen"/>
+                <Button Grid.Column="0" Grid.Row="2" Text="Protección de Datos" BackgroundColor="LightSkyBlue" Command="{Binding GoNextCard}" CommandParameter="LightSkyBlue"/>
+                <Button Grid.Column="1" Grid.Row="0" Text="Privacidad" BackgroundColor="DeepPink" Command="{Binding GoNextCard}" CommandParameter="DeepPink"/>
+                <Button Grid.Column="1" Grid.Row="1" Text="Facts" BackgroundColor="Orange" Command="{Binding GoNextCard}" CommandParameter="Orange"/>
+            </Grid>
+        </StackLayout>
+        <StackLayout VerticalOptions="EndAndExpand">
+            <Button Text="Nueva Partida" BackgroundColor="Red" FontAttributes="Bold" Clicked="OnNewGameClicked" />
+        </StackLayout>
     </StackLayout>
+  
 </ContentPage>

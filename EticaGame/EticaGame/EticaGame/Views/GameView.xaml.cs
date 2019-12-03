@@ -1,10 +1,11 @@
-﻿using EticaGame.ViewModels;
+﻿using EticaGame.Models;
+using EticaGame.ViewModels;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,10 +14,36 @@ namespace EticaGame.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GameView : ContentPage
     {
-        public GameView()
+        int T;
+        public GameView(int equipos)
         {
             InitializeComponent();
-            BindingContext = new GameViewModel();
+            T = equipos;
+            BindingContext = new GameViewModel(Navigation);
+        }
+
+        async void OnInfoClicked(object sender, EventArgs e) 
+        {
+            await Navigation.PushAsync(new InfoGame());
+        }
+
+        async void OnReglasClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new InfoGame());
+        }
+
+        [Obsolete]
+        async void OnNewGameClicked(object sender, EventArgs e)
+        {
+
+            if (Device.OS == TargetPlatform.Android)
+            {
+                Application.Current.MainPage = new GameSetup();
+            }
+            else if (Device.OS == TargetPlatform.iOS)
+            {
+                await Navigation.PushModalAsync(new GameSetup());
+            }
         }
     }
 }

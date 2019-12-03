@@ -4,19 +4,19 @@ using System.Text;
 
 namespace EticaGame.Models
 {
-    class Team
+    public class Team
     {
         public string Name { get; set; }
-        public int Miembros { get; set; }
-        public int Aciertos { get; set; }
-        public int Fallos { get; set; }
+        public string Aciertos { get; set; }
+        public string Fallos { get; set; }
 
-        public Team(string name, int members) 
+        public Team(int id) 
         {
-            this.Name = name;
-            this.Miembros = members;
-            this.Aciertos = 0;
-            this.Fallos = 0;
+            string v = id.ToString();
+            this.Name = "Equipo " + v;
+            this.Aciertos = "Aciertos: " + "0";
+            this.Fallos = "Fallos: " + "0";
         }
+
     }
 }
