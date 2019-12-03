@@ -4,10 +4,10 @@ using System.Text;
 
 namespace EticaGame.Models
 {
-    public class ACard
+    public class ACard : Card
     {
         string Title, Explica;
-        public ACard(string titulo, string explica)
+        public ACard(string titulo, string explica) : base(titulo, explica)
         {
             Title = titulo;
             Explica = explica;

@@ -5,6 +5,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="EticaGame.Views.InfoGame">
-    
-    <Label Text="Informacion del juego"/>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Info del juego"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text="kajefnjkebfnksjehbfnjerhgheaksdjbfkasjhdfbalsjek falejkfahlnsekj fahlweijkanflskejf lajsehfnijkehrglnjekr gsliergjlerjbgljsk"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="StartAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

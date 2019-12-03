@@ -7,12 +7,12 @@
              x:Class="EticaGame.GameSetup">
 
     <StackLayout>
-        <Label Text="Bienvenido a eTICa-MENTE" FontSize="Title" />
-        <Label Text="Por favor rellena los campos"/>
+        <Label Text="eTICa-MENTE" FontSize="45" TextColor="Black" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+        <Label Text="Por favor rellena los campos" FontSize="20"/>
         <StackLayout>
             <StackLayout HorizontalOptions="CenterAndExpand" 
                          Orientation="Horizontal">
-                <Label Text="Numero de equipos:" FontSize="Medium" TextColor="Black"/>
+                <Label Text="Numero de equipos:" FontSize="25" TextColor="Black"/>
             </StackLayout>
             <Picker x:Name="teams" Title="Equipos" TitleColor="OrangeRed" 
                         HorizontalOptions="CenterAndExpand" 
@@ -27,11 +27,12 @@
             </Picker>
         </StackLayout>
         <StackLayout>
-            <Label Text="Este juego ha sido creado por:"/>
-            <Label Text="fasdfasd, saidfjkhasd, askdjhf"/>
+            <Label TextColor="DarkBlue" FontSize="15" Margin="5" Text="Cualquier información referente al juego podrás encontrarla a través de los botones de la pantalla principal de juego."/>
+            <Label TextColor="DarkBlue" FontSize="15" Margin="5" Text="Gracias por jugar."/>
         </StackLayout>
-        
-        <Button Text="Juego Nuevo" Clicked="OnStartGameButtonClicked" 
-                CornerRadius="30" BackgroundColor="Red"/>
+        <StackLayout VerticalOptions="StartAndExpand" Padding="10">
+            <Button Text="Juego Nuevo" Clicked="OnStartGameButtonClicked" FontSize="15" FontAttributes="Bold"
+                CornerRadius="30" BackgroundColor="Red" HeightRequest="50"/>
+        </StackLayout>
     </StackLayout>
 </ContentPage>

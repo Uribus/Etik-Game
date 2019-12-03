@@ -19,7 +19,7 @@ namespace EticaGame.Views
         {
             InitializeComponent();
             T = equipos;
-            BindingContext = new GameViewModel(Navigation);
+            BindingContext = new GameViewModel(T, Navigation);
         }
 
         async void OnInfoClicked(object sender, EventArgs e) 
@@ -29,7 +29,7 @@ namespace EticaGame.Views
 
         async void OnReglasClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new InfoGame());
+            await Navigation.PushAsync(new RulesGame());
         }
 
         [Obsolete]

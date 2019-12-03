@@ -28,6 +28,6 @@ C:\Users\jdrec\source\repos\EGame\Etik-Game\EticaGame\EticaGame\EticaGame\bin\De
 C:\Users\jdrec\source\repos\EGame\Etik-Game\EticaGame\EticaGame\EticaGame\bin\Debug\netstandard2.0\EticaGame.pdb
 C:\Users\jdrec\source\repos\EGame\Etik-Game\EticaGame\EticaGame\EticaGame\obj\Debug\netstandard2.0\EticaGame.csprojAssemblyReference.cache
 C:\Users\jdrec\source\repos\EGame\Etik-Game\EticaGame\EticaGame\EticaGame\obj\Debug\netstandard2.0\XamlC.stamp
-C:\Users\jdrec\source\repos\EGame\Etik-Game\EticaGame\EticaGame\EticaGame\obj\Debug\netstandard2.0\Views\CardViews\MultiACard.xaml.g.cs
-C:\Users\jdrec\source\repos\EGame\Etik-Game\EticaGame\EticaGame\EticaGame\obj\Debug\netstandard2.0\Views\CardViews\SingleACard.xaml.g.cs
-C:\Users\jdrec\source\repos\EGame\Etik-Game\EticaGame\EticaGame\EticaGame\obj\Debug\netstandard2.0\Views\CardViews\TFACard.xaml.g.cs
+C:\Users\jdrec\source\repos\EGame\Etik-Game\EticaGame\EticaGame\EticaGame\obj\Debug\netstandard2.0\Views\CardViews\ActionCardView.xaml.g.cs
+C:\Users\jdrec\source\repos\EGame\Etik-Game\EticaGame\EticaGame\EticaGame\obj\Debug\netstandard2.0\Views\CardViews\QuestionCardView.xaml.g.cs
+C:\Users\jdrec\source\repos\EGame\Etik-Game\EticaGame\EticaGame\EticaGame\obj\Debug\netstandard2.0\Views\RulesGame.xaml.g.cs

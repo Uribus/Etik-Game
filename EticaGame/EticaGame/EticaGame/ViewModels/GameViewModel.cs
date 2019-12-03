@@ -17,30 +17,46 @@ namespace EticaGame.ViewModels
         enum CType { Brecha, SLibre, ProdDatos, Privacidad, Facts }
         //enum Action { Turno, Tira, Debate, Pierde, Roba }
 
-        List<QCard> CartasGenero;
-        List<QCard> CartasSoftware;
-        List<QCard> CartasProteccion;
-        List<QCard> CartasPrivacidad;
-        List<QCard> CartasFacts;
+        List<QCard> CartasGenero = new List<QCard>();
+        List<QCard> CartasSoftware = new List<QCard>();
+        List<QCard> CartasProteccion = new List<QCard>();
+        List<QCard> CartasPrivacidad = new List<QCard>();
+        List<QCard> CartasFacts = new List<QCard>();
         //cards that have appeared already in the game
-        List<QCard> CartasUsadas;
+        List<QCard> CartasUsadas = new List<QCard>();
         //action cards
-        List<ACard> CartasEspeciales;
+        List<ACard> CartasEspeciales = new List<ACard>();
         public ObservableCollection<Team> Equipos { get; private set; } = new ObservableCollection<Team>();
-        bool Start=false;
+        //bool Start=false;
+        int NTeams;
+        int TurnoTeam;
+        public string Turno { get; set; }
 
-        public GameViewModel(INavigation navigation)
+        public GameViewModel(int teams, INavigation navigation)
         {
-            //initialize and fill all the lists
-            CreaEquipos(4);
-            //LlenarListaBrecha("Brecha");
-            //LlenarListaSoftware("Software");
-            //LlenarListaProteccion("Proteccion");
-            //LlenarListaPrivacidad("Privacidad");
-            //LlenarListaFact("Facts");
-            //LLenarListaEspeciales();
+            this.NTeams = teams;
 
+            //initialize and fill all the lists
+            CreaEquipos(teams);
+            LlenarListaBrecha("Brecha");
+            LlenarListaSoftware("Software");
+            LlenarListaProteccion("Proteccion");
+            LlenarListaPrivacidad("Privacidad");
+            LlenarListaFact("Facts");
+            LLenarListaEspeciales();
+            TurnoTeam = 0;
+            ActualizarTurno();
             this.Navigation = navigation;
+        }
+
+        void ActualizarTurno()
+        {
+            if(TurnoTeam <= NTeams)
+            {
+                TurnoTeam += 1;   
+            }
+            else { TurnoTeam = 1; }
+            Turno = "Equipo" + TurnoTeam.ToString();
         }
 
         void CreaEquipos(int equipos)
@@ -53,38 +69,38 @@ namespace EticaGame.ViewModels
 
         void LlenarListaBrecha(string tipo)
         {
-            CartasGenero.Add(new SingleAnswerCard("", "", tipo));
-            CartasGenero.Add(new TFAnserCard("", true, tipo));
-            CartasGenero.Add(new MultiAnswerCard("", "", "", "", tipo));
+            CartasGenero.Add(new QCard("¿Pregunta A1?", tipo, "Dis", "", ""));
+            CartasGenero.Add(new QCard("¿Pregunta A2?", tipo, "True", "", ""));
+            CartasGenero.Add(new QCard("¿Pregunta A3?", tipo, "A", "B", "C"));
        
         }
 
         void LlenarListaSoftware(string tipo)
         {
-            CartasSoftware.Add(new SingleAnswerCard("", "", tipo));
-            CartasSoftware.Add(new TFAnserCard("", true, tipo));
-            CartasSoftware.Add(new MultiAnswerCard("", "", "", "", tipo));
+            CartasSoftware.Add(new QCard("¿Pregunta B1?", tipo, "Dis", "", ""));
+            CartasSoftware.Add(new QCard("¿Pregunta B2?", tipo, "True", "", ""));
+            CartasSoftware.Add(new QCard("¿Pregunta B3?", tipo, "A", "B", "C"));
         }
         
         void LlenarListaProteccion(string tipo)
         {
-            CartasProteccion.Add(new SingleAnswerCard("", "", tipo));
-            CartasProteccion.Add(new TFAnserCard("", true, tipo));
-            CartasProteccion.Add(new MultiAnswerCard("", "", "", "", tipo));
+            CartasProteccion.Add(new QCard("¿Pregunta C1?", tipo, "Dis", "", ""));
+            CartasProteccion.Add(new QCard("¿Pregunta C2?", tipo, "True", "", ""));
+            CartasProteccion.Add(new QCard("¿Pregunta C3?", tipo, "A", "B", "C"));
         }
 
         void LlenarListaPrivacidad(string tipo)
         {
-            CartasPrivacidad.Add(new SingleAnswerCard("", "", tipo));
-            CartasPrivacidad.Add(new TFAnserCard("", true, tipo));
-            CartasPrivacidad.Add(new MultiAnswerCard("", "", "", "", tipo));
+            CartasPrivacidad.Add(new QCard("¿Pregunta D1?", tipo, "Dis", "", ""));
+            CartasPrivacidad.Add(new QCard("¿Pregunta D2?", tipo, "True", "", ""));
+            CartasPrivacidad.Add(new QCard("¿Pregunta D3?", tipo, "A", "B", "C"));
         }
 
         void LlenarListaFact(string tipo)
         {
-            CartasFacts.Add(new SingleAnswerCard("", "", tipo));
-            CartasFacts.Add(new TFAnserCard("", true, tipo));
-            CartasFacts.Add(new MultiAnswerCard("", "", "", "", tipo));
+            CartasFacts.Add(new QCard("¿Pregunta E1?", tipo, "Dis", "", ""));
+            CartasFacts.Add(new QCard("¿Pregunta E2?", tipo, "True", "", ""));
+            CartasFacts.Add(new QCard("¿Pregunta E3?", tipo, "A", "B", "C"));
         }
 
         void LLenarListaEspeciales()
@@ -124,19 +140,87 @@ namespace EticaGame.ViewModels
             }
         }
 
+
+        // Generate a random number between two numbers  
+        public int RandomNumber(int min, int max)
+        {
+            Random random = new Random();
+            return random.Next(min, max);
+        }
+
+        QCard ElegirNuevaQCarta(string colorBton)
+        {
+            QCard krta = null;
+            //pick random number
+            int ran = RandomNumber(0, 1000);
+            //pick a car randomly from the list corresponding to the color of the button clicked
+            switch (colorBton)
+            {
+                case "Violet":
+                    if(CartasGenero.Count == 0) { return null; }
+                    if(ran == CartasGenero.Count) { ran -= 1; }
+                    krta = CartasGenero[ran % CartasGenero.Count];
+                    break;
+                case "ForestGreen":
+                    if (CartasSoftware.Count == 0) { return null; }
+                    if (ran == CartasSoftware.Count) { ran -= 1; }
+                    krta = CartasSoftware[ran % CartasSoftware.Count];
+                    break;
+                case "LightSkyBlue":
+                    if (CartasProteccion.Count == 0) { return null; }
+                    if (ran == CartasProteccion.Count) { ran -= 1; }
+                    krta = CartasProteccion[ran % CartasProteccion.Count];
+                    break;
+                case "DeepPink":
+                    if (CartasPrivacidad.Count == 0) { return null; }
+                    if (ran == CartasPrivacidad.Count) { ran -= 1; }
+                    krta = CartasPrivacidad[ran % CartasPrivacidad.Count];
+                    break;
+                case "Orange":
+                    if (CartasFacts.Count == 0) { return null; }
+                    if (ran == CartasFacts.Count) { ran -= 1; }
+                    krta = CartasFacts[ran % CartasFacts.Count];
+                    break;
+            }
+            //move the card to the used list
+            TraspasarUsadas(krta);
+            //assign it to return
+            return krta;
+        }
+
+        ACard ElegirNuevaACarta()
+        {
+            //pick random number
+            int ran = RandomNumber(0, 100);
+            if (ran == CartasGenero.Count) { ran -= 1; }
+            return CartasEspeciales[ran % CartasEspeciales.Count];
+        }
+
         public ICommand GoNextCard
         {
             get
             {
-                return new Command<string>((x) => CallCardView(x));
+                return new Command<string>((colorBton) => CallCardView(colorBton));
             }
         }
-        async void CallCardView(string x)
+        async void CallCardView(string colorBton)
         {
-            ColorTypeConverter converter = new ColorTypeConverter();
-            QCard carta = new QCard("",x);
-            Color color = (Color)(converter.ConvertFromInvariantString(x));
-            await Navigation.PushAsync(new SingleACard(color));
+            int ran = RandomNumber(0, 1000);
+            if (ran <= 750)
+            {
+                ColorTypeConverter converter = new ColorTypeConverter();
+                Color color = (Color)(converter.ConvertFromInvariantString(colorBton));
+                QCard send = ElegirNuevaQCarta(colorBton);
+                if (send != null)
+                {
+                    await Navigation.PushAsync(new QuestionCardView(color, ElegirNuevaQCarta(colorBton)) { BindingContext = this, });
+                }
+                else await Application.Current.MainPage.DisplayAlert("Lo sentimos", "No quedan más cartas de este tipo", "OK");
+            }
+            else 
+            {
+                await Navigation.PushAsync(new ActionCardView(ElegirNuevaACarta()) { BindingContext = this,});
+            }
         }
     }
 }

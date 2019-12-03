@@ -47,7 +47,7 @@
             </CarouselView.ItemTemplate>
         </CarouselView>
         <Label Text="Turno:" HorizontalOptions="CenterAndExpand" FontSize="Title" TextColor="Black"/>
-        <Label x:Name="tocaTurno" Text="Equipo 1" HeightRequest="120" HorizontalOptions="CenterAndExpand" FontSize="75" TextColor="Black"/>
+        <Label x:Name="tocaTurno" Text="{Binding Turno}" HeightRequest="120" HorizontalOptions="CenterAndExpand" FontSize="75" TextColor="Black"/>
         <StackLayout HorizontalOptions="Center" VerticalOptions="StartAndExpand">
             <Grid HorizontalOptions="Center" Margin="12"> 
                 <Grid.ColumnDefinitions>

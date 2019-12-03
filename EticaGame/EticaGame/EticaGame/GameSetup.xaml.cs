@@ -33,13 +33,20 @@ namespace EticaGame
         [Obsolete]
         async void OnStartGameButtonClicked(object sender, EventArgs e)
         {
-            if(Device.OS == TargetPlatform.Android)
+            if(Curr == (-1))
             {
-                Application.Current.MainPage = new NavigationPage(new GameView(Curr));
+                await DisplayAlert("Atención", "No has seleccionado un número de equipos", "OK");
             }
-            else if(Device.OS == TargetPlatform.iOS)
+            else 
             {
-                await Navigation.PushModalAsync(new NavigationPage(new GameView(Curr)));
+                if (Device.OS == TargetPlatform.Android)
+                {
+                    Application.Current.MainPage = new NavigationPage(new GameView(Curr));
+                }
+                else if (Device.OS == TargetPlatform.iOS)
+                {
+                    await Navigation.PushModalAsync(new NavigationPage(new GameView(Curr)));
+                }
             }
         }
     }
