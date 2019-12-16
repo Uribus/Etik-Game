@@ -44,6 +44,8 @@ namespace EticaGame.Views.CardViews
             Pregunta.Text = Question;
             if (Question == "Debate")
             {
+                Box1.IsVisible = false;
+                Box2.IsVisible = false;
                 Resp.IsEnabled = false;
                 AnswerUsr = "noParam";
                 Ausr.Text = AnswerUsr;
@@ -60,6 +62,8 @@ namespace EticaGame.Views.CardViews
                 {
                     case "#":
                         Ans.IsVisible = false;
+                        Box1.IsVisible = false;
+                        Box2.IsVisible = false;
                         break;
                     case "Falso":
                         R0.Text = A0;

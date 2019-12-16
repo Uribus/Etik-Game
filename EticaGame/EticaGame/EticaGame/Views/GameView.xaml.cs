@@ -35,20 +35,27 @@ namespace EticaGame.Views
         [Obsolete]
         async void OnNewGameClicked(object sender, EventArgs e)
         {
-
-            if (Device.OS == TargetPlatform.Android)
+            bool answer = await DisplayAlert("Vas a ir al menú de selección de equipos", "Confirma", "Yes", "No");
+            if(answer)
             {
-                Application.Current.MainPage = new GameSetup();
-            }
-            else if (Device.OS == TargetPlatform.iOS)
-            {
-                await Navigation.PushModalAsync(new GameSetup());
+                if (Device.OS == TargetPlatform.Android)
+                {
+                    Application.Current.MainPage = new GameSetup();
+                }
+                else if (Device.OS == TargetPlatform.iOS)
+                {
+                    await Navigation.PushModalAsync(new GameSetup());
+                }
             }
         }
 
-        void OnResetGameClicked(object sender, EventArgs e)
+        async void OnResetGameClicked(object sender, EventArgs e)
         {
-            BindingContext = new GameViewModel(T, Navigation);
+            bool answer = await DisplayAlert("¿Reestablecer valores de partida?", "Confirma", "Yes", "No");
+            if(answer)
+            {
+                BindingContext = new GameViewModel(T, Navigation);
+            }
         }
     }
 }

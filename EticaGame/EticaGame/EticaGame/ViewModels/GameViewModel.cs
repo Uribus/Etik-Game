@@ -105,9 +105,31 @@ namespace EticaGame.ViewModels
         //FOSS questions
         void LlenarListaSoftware(string tipo)
         {
-            //CartasSoftware.Add(new QCard("¿Pregunta B1?", tipo, "Dis", "#", ""));
-            //CartasSoftware.Add(new QCard("¿Pregunta B2?", tipo, "True", "False", ""));
-            //CartasSoftware.Add(new QCard("¿Pregunta B3?", tipo, "A", "B", "C"));
+            CartasSoftware.Add(new QCard("Significado siglas FOSS o en castellano PLiCA.", tipo, "", "#", "", "", "FOSS : Free and Open Source Software, PLiCA: Programas Libres y de Código Abierto"));
+            CartasSoftware.Add(new QCard("¿Qué significa “Software libre y de código abierto” o FOSS?", tipo, "", "#", "", "", "Es el software que está licenciado (otorgado o aprobado) de tal manera que los usuarios pueden estudiar, modificar y mejorar su diseño mediante la disponibilidad de su código fuente (nos da libertad para hacer todo el uso, copiar, estudiar, modificar el código fuente libremente)"));
+            CartasSoftware.Add(new QCard("¿Qué son los programas libres o a que se refiere?", tipo, "", "#", "", "", "Se refiere a la libertad de los usuarios para ejecutar, copiar, distribuir, estudiar, cambiar y mejorar el software"));
+            CartasSoftware.Add(new QCard("¿Qué son los programas de código abierto?", tipo, "", "#", "", "", "Es el software cuyo código fuente y otros derechos que normalmente son exclusivos para quienes poseen los derechos de autor, son publicado bajo una licencia de código abierto o forman parte de dominio público"));
+            CartasSoftware.Add(new QCard("Menciona alguno de los cuatro principios o libertades del software libre.", tipo, "", "#", "", "", "La libertad de ejecutar el programa para cualquier propósito, la libertad de estudiar cómo funciona el programa, y cambiarlo para que haga lo que usted quiera, la libertad de redistribuir copias para ayudar a su prójimo. El acceso al código fuente es una condición necesaria para ello, la libertad de distribuir copias de sus versiones modificadas a terceros. Esto le permite ofrecer a toda la comunidad la oportunidad de beneficiarse de las modificaciones. El acceso al código fuente es una condición necesaria para ello"));
+            CartasSoftware.Add(new QCard("¿Tiene el mismo significado software libre y software gratuito?", tipo, "Verdadero", "Falso", "", "", "Falso"));
+            CartasSoftware.Add(new QCard("Diferencias entre el software libre y gratis", tipo, "", "#", "", "", "libre: se cede el código fuente,  gratis: se permite usar la aplicación o software sin pagar pero no se cede el código fuente"));
+            CartasSoftware.Add(new QCard("¿Que surge antes la cultura libre o el software libre?", tipo, "", "#", "", "", "El software libre surgió primero"));
+            CartasSoftware.Add(new QCard("¿La cultura libre tiene varios niveles de libertad?", tipo, "Verdadero", "Falso", "", "", "Verdadero"));
+            CartasSoftware.Add(new QCard("¿Cuál de los siguientes niveles de libertad son correctos?", tipo, "Dominio público y Creative Commons", "Software libre y Hardware libre", "Todos los anteriores", "", "Todos los anteriores"));
+            CartasSoftware.Add(new QCard("¿Quién fue el fundador del software libre y del proyecto GNU?", tipo, "Linus Torvalds", "Lawrence Lessig", "Richard Stallman", "Marc Ewing", "Richard Stallman"));
+            CartasSoftware.Add(new QCard("Nombra tres de los proyectos de software libre o código abierto más grandes o conocidos.", tipo, "", "#", "", "", "GNU, Linux, Red Hat, Mozilla, Apache, KDE, Gimp, GNOME, NOVELL (OpenSUSE), NotePad++, OpenOffice"));
+            CartasSoftware.Add(new QCard("¿Cual de los siguiente proyectos no es de software libre?", tipo, "the GIMP", "Apache", "GNU", "Ninguno de los anteriores", "Ninguno de los anteriores"));
+            CartasSoftware.Add(new QCard("¿Cuál de los siguientes proyectos no es de código abierto?", tipo, "Mozilla Firefox", "OpenOffice", "Docker", "Ninguno de los anteriores", "Ninguno de los anteriores"));
+            CartasSoftware.Add(new QCard("¿La protección legal del software se realiza mediante los “derechos de autor” o “patente de invención” ?", tipo, "", "#", "", "", "La protección de software se realiza mediante el derecho de autor"));
+            CartasSoftware.Add(new QCard("¿Licencias que existen en el software libre y código abierto?", tipo, "", "#", "", "", "GPL (General Public Licences) – obliga a compartir igual, BSD (Berkeley Software Distribution) – no obliga a compartir igual, CC (Creative Commons) - libre uso y distribución, CopyLeft"));
+            CartasSoftware.Add(new QCard("¿Qué es el Hardware libre?", tipo, "", "#", "", "", "Es todo dispositivo de hardware cuyas especificaciones y diagramas esquemáticos son de acceso público"));
+            CartasSoftware.Add(new QCard("¿Cuál de los siguientes proyectos no es de hardware libre?", tipo, "Arduino", "RepRap", "UltraSparc", "Ninguno de los anteriores", "Ninguno de los anteriores"));
+            CartasSoftware.Add(new QCard("¿La licencia de un proyecto o código se debe subir en un fichero único e identificado?", tipo, "", "#", "", "", "Si, se debe subir el un fichero con nombre Licencia"));
+            CartasSoftware.Add(new QCard("¿Si un software tiene la licencia de CopyLeft se debe mantener de la misma forma en modificaciones de este?", tipo, "", "#", "", "", "Si, se debe mantener la misma licencia o criterios que sigue esta"));
+            CartasSoftware.Add(new QCard("Diferencias entre las licencias de GPL y BSD", tipo, "", "#", "", "", "GPL: obliga a compartir igual, BSD: no obliga a compartir igual"));
+            CartasSoftware.Add(new QCard("¿Existen diferentes combinaciones de licencias de Creative Common o que den un significado diferente?", tipo, "Verdadero", "Falso", "", "", "Verdadero"));
+            CartasSoftware.Add(new QCard("Debate", tipo, "¿Tiene alguna ventaja o inconvenientes el tener el código fuente de las aplicaciones?", "", "", "", ""));
+            CartasSoftware.Add(new QCard("Debate", tipo, "Es mejor el software libre y de código abierto frente al software privado", "", "", "", ""));
+            CartasSoftware.Add(new QCard("Debate", tipo, "Existen alternativas de encontrar un software libre que nos sirva y tenga las mismas funcionalidades al igual que el software de pago o privados?", "", "", "", ""));
         }
         //data protection questions
         void LlenarListaProteccion(string tipo)
@@ -136,6 +158,7 @@ namespace EticaGame.ViewModels
             CartasProteccion.Add(new QCard("El RGPD no establece multas en función del volumen de ingresos de la empresa o bien de cantidades superiores a 10 millones de euros.", tipo, "Verdadero", "Falso", "", "", "Falso( El art. 83 del RGPD establece multas de entre 10 y 20 millones de euros, o bien, un 2 o un 4 % del volumen de negocio del anterior ejercicio)"));
             CartasProteccion.Add(new QCard("Menciona 4 de las bases que regula el RGPD", tipo, "", "#", "", "", "Consentimiento, Interés público, Poderes públicos, Interés legítimo,Obligación legal, Ejecución de un contrato, Intereses vitales"));
             CartasProteccion.Add(new QCard("¿A qué regulación sustituyó el RGPD?", tipo, "", "#", "", "", "Directiva 95/46/CE del Parlamento Europeo y del Consejo"));
+            CartasProteccion.Add(new QCard("Debate", tipo, "¿Es correcto que el RGPD establezca multas de hasta 20 millones de euros o hasta un 4% del volumen del negocio anterior?", "", "", "", ""));
         }
         //data privacy questions
         //PENDIENTE
@@ -154,18 +177,20 @@ namespace EticaGame.ViewModels
             CartasPrivacidad.Add(new QCard("Para el borrado de la huella digital, ¿cómo funciona el testamento digital?", tipo, "", "#", "", "", "El testamento digital sirve para especificar nuestras voluntades en cuanto a nuestro legado digital, se puede formalizar ante notario. Aunque no es necesario por ejemplo para borrar una cuenta, facilita el proceso ya que en él se guardan las credenciales de acceso"));
             CartasPrivacidad.Add(new QCard(" En septiembre de 2019 se impuso la multa más elevada a una empresa por infracción de la privacidad, la cuantía fue de 170 millones por compartir y utilizar datos de menores de 13 años sin consentimiento de sus tutores legales. ¿A qué empresa se le impuso?", tipo, "Instagram", "Facebook", "TikTok", "Youtube", "Youtube"));
             CartasPrivacidad.Add(new QCard("Según se refleja en las políticas de privacidad de Google, de la siguiente información, ¿cuál puede recoger con fines de mejorar el servicio o publicitarios?", tipo, "Nacionalidad, historial de búsqueda, calendario de eventos", "Sexo, edad, fotos y videos subidos a redes sociales", "Direcciones IP, correos enviados, contactos añadidos", "Todas las anteriores", "Todas las anteriores"));
-            
-            CartasPrivacidad.Add(new QCard("Google permite que gestiones cierta información de la que almacena, ¿qué actividades de las que se guardan te permite controlar?", tipo, "Historial de ubicaciones, historial de búsquedas de YouTube, grabaciones de voz y audio", "Historial de navegación, historial de reproducción de Youtube, dirección personal de correo electrónico", "Historial de ubicaciones, dirección personal de correo electrónico, historial de búsquedas de YouTube", "Historial de ubicaciones, historial de búsquedas de YouTube, nombre y apellidos", ""));
-            CartasPrivacidad.Add(new QCard("¿Qué debe ofrecer la criptografía?", tipo, "Confidencialidad, integridad, conexión, no repudio", "Confidencialidad, integridad, autenticación, no repudio", "Confidencialidad, integridad, eficiencia, no repudio", "Confidencialidad, integridad, autenticación, velocidad", ""));
+            CartasPrivacidad.Add(new QCard("Google permite que gestiones cierta información de la que almacena, ¿qué actividades de las que se guardan te permite controlar?", tipo, "Historial de ubicaciones, historial de búsquedas de YouTube, grabaciones de voz y audio", "Historial de navegación, historial de reproducción de Youtube, dirección personal de correo electrónico", "Historial de ubicaciones, dirección personal de correo electrónico, historial de búsquedas de YouTube", "Historial de ubicaciones, historial de búsquedas de YouTube, nombre y apellidos", "Historial de ubicaciones, historial de búsquedas de YouTube, grabaciones de voz y audio"));
+            CartasPrivacidad.Add(new QCard("¿Qué debe ofrecer la criptografía?", tipo, "Confidencialidad, integridad, conexión, no repudio", "Confidencialidad, integridad, autenticación, no repudio", "Confidencialidad, integridad, eficiencia, no repudio", "Confidencialidad, integridad, autenticación, velocidad", "Confidencialidad, integridad, autenticación, no repudio"));
             CartasPrivacidad.Add(new QCard("¿Cuál es la red social que añade metadatos (instrucciones IPTC) a las imágenes de su plataforma para poder rastrearlas fuera de ella?", tipo, "Facebook", "Twitter", "Google Fotos", "Pinterest", "Facebook"));
-
             CartasPrivacidad.Add(new QCard("El Tribunal de Justicia de la Unión Europea determinó que cualquier usuario tiene derecho a solicitar que los motores de búsqueda eliminen sus datos de las consultas. Se estipuló que de hacerlo, esa información debe desaparecer de las búsquedas.", tipo, "Verdadero", "Falso", "", "", "Falso, basta con que aparezca como irrelevante o inadecuada"));
             CartasPrivacidad.Add(new QCard("Según su política de privacidad, Instagram se compromete a no monitorizar, recolectar o almacenar identificadores del dispositivo con el que te conectas.", tipo, "Verdadero", "Falso", "", "", "Falso, Instagram advierte que puede hacerlo, teniendo en esos identificadores información del hardware, de los datos que almacenas y del sistema operativo. Además pueden compartirlo con terceros del mismo grupo"));
             CartasPrivacidad.Add(new QCard("Los términos Data Mining y Data Harvesting en el ámbito informático no significan lo mismo.", tipo, "Verdadero", "Falso", "", "", "Verdadero, ambos son similares pero en “Data Harvesting” (o recolección de datos) se utiliza un proceso que extrae y analiza los datos recopilados de Internet mientras que “Data Mining” se centra en el análisis de grandes conjuntos de datos"));
             CartasPrivacidad.Add(new QCard("La reducción de datos si se consisera una técnica de anonimización de datos.", tipo, "True", "False", "", "", "Verdadero. Aunque solo se reduzca el número de datos originales, mientras se produzca la suficiente distorsión de los datos para evitar la identificación del usuario será válida"));
             CartasPrivacidad.Add(new QCard("Las filtraciones de Edward Snowden denunciaban el espionaje y la intercepción masiva de las comunicaciones que estaba haciendo el gobierno de EEUU. ¿Qué contestó el presidente de EEUU Barack Obama ante este escándalo?", tipo, "“Los documentos son falsos, solo se interceptan comunicaciones sospechosas.”", "“Si lo que quereis es privacidad no uséis la tecnología.”", "“No se puede tener el 100% de seguridad y el 100% de privacidad.”", "“Esto lo llevaba el vicepresidente, yo no sé nada.”", "“No se puede tener el 100% de seguridad y el 100% de privacidad.”"));
+            CartasPrivacidad.Add(new QCard("Debate", tipo, "¿Existe el anonimato? ¿Creeis que es bueno que exista o existiera; o debería limitarse?", "", "", "", ""));
+            CartasPrivacidad.Add(new QCard("Debate", tipo, "Las políticas y términos de privacidad es algo que de forma “natural” se suele pasar por alto al ceder nuestros datos en una web, como puede ser por ejemplo una red social. ¿Creeis que esta práctica es algo grave? ¿Deberían las empresas advertir sobre estas políticas y obligar a leerlas?", "", "", "", ""));
+            CartasPrivacidad.Add(new QCard("Debate", tipo, "Aunque anonimizados, o al menos debería ser así, muchas empresas venden nuestros datos a terceros para que estos, con fines publicitarios en su mayoría, elaboren perfiles con los que modelar su publicidad. ¿Creeis que esto debería estar permitido? ¿Se debería dar siempre la opción al usuario de poder negarse?", "", "", "", ""));
+            CartasPrivacidad.Add(new QCard("Debate", tipo, "La huella o rastro digital es algo que irremediablemente cualquier usuario va dejando al usar Internet. ¿Creeis que debería ser posible que este rastro nunca existiera? Es decir, que existiera la opción de que ninguna web pudiera guardar cualquier información sobre un usuario. ¿Sería factible?", "", "", "", ""));
         }
-
+        //question about facts
         void LlenarListaFact(string tipo)
         {
             CartasFacts.Add(new QCard("Desde 1979 se otorga un premio cuyo nombre se debe a las programadoras del primer computador ENIAC.", tipo, "Verdadero", "Falso", "", "", "Falso (El nombre se debe a los dos hombres que diseñaron la máquina)"));
@@ -188,7 +213,7 @@ namespace EticaGame.ViewModels
             CartasFacts.Add(new QCard("¿Qué compañía ha desarrollado una cama eléctrica que podemos controlar por voz?", tipo, "", "#", "", "", "Xiaomi"));
            
         }
-
+        //gameflow control cards
         void LLenarListaEspeciales()
         {
             CartasEspeciales.Add(new ACard("¡Pierde turno!", "Cuando estéis listos pasad al turno del siguiente equipo."));
@@ -303,7 +328,7 @@ namespace EticaGame.ViewModels
         async void CallCardView(string colorBton)
         {
             int ran = RandomNumber(0, 1000);
-            if (ran <= 750)
+            if (ran <= 150)
             {
                 ColorTypeConverter converter = new ColorTypeConverter();
                 Color color = (Color)(converter.ConvertFromInvariantString(colorBton));

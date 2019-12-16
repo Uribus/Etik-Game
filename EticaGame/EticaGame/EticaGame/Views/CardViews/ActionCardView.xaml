@@ -8,10 +8,18 @@
              BackgroundColor="Red"
              NavigationPage.HasNavigationBar="False">
     <StackLayout>
-        <StackLayout Padding="40">
-            <Label x:Name="Accion" HorizontalOptions="CenterAndExpand" FontSize="35" TextColor="Black"/>
-            <Label x:Name="Explica" TextColor="Black" HorizontalOptions="CenterAndExpand" FontSize="25"/>
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Label x:Name="Accion" HorizontalOptions="CenterAndExpand" FontSize="37" TextColor="Black"/>
             <Label  x:Name="Ausr" Text="{Binding UsrAnswer, Mode=OneWayToSource}" IsVisible="False"/>
+        </StackLayout>
+        <StackLayout Padding="50">
+            <Label x:Name="Explica" HorizontalOptions="CenterAndExpand" TextColor="Black" FontSize="25"/>
+        </StackLayout>
+        <StackLayout HorizontalOptions="CenterAndExpand" Padding="10">
+            <BoxView  HeightRequest="4" Color="Black" WidthRequest="230"/>
+        </StackLayout>
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <BoxView  HeightRequest="3" Color="Black" WidthRequest="200"/>
         </StackLayout>
         <StackLayout VerticalOptions="EndAndExpand">
             <Button Text="Siguiente Turno" HorizontalOptions="FillAndExpand" FontAttributes="Bold" BackgroundColor="DarkGoldenrod" FontSize="20" TextColor="White" Command="{Binding NextTurn}" CommandParameter="noParam"/>

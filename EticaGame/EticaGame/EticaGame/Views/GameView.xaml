@@ -9,7 +9,7 @@
              FlowDirection="LeftToRight"
              NavigationPage.HasNavigationBar="False">
     
-    <StackLayout>
+    <StackLayout BackgroundColor="LightGray">
         <StackLayout HorizontalOptions="CenterAndExpand">
             <Grid>
                 <Grid.RowDefinitions>
@@ -46,7 +46,7 @@
                 </DataTemplate>
             </CarouselView.ItemTemplate>
         </CarouselView>
-        <Label Text="Turno:" HorizontalOptions="CenterAndExpand" FontSize="Title" TextColor="Black" HeightRequest="30"/>
+        <Label Text="Turno:" HorizontalOptions="CenterAndExpand" FontSize="30" TextColor="Black" HeightRequest="40"/>
         <Label x:Name="tocaTurno" Text="{Binding Turno}" HeightRequest="140" HorizontalOptions="CenterAndExpand" FontSize="75" TextColor="Black"/>
         <StackLayout HorizontalOptions="Center" VerticalOptions="StartAndExpand" HeightRequest="200">
             <Grid HorizontalOptions="Center" Margin="12"> 
@@ -59,11 +59,11 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <Button Grid.Column="0" Grid.Row="0" Text="Brecha de Género" BackgroundColor="Violet" Command="{Binding GoNextCard}" CommandParameter="Violet"/>
-                <Button Grid.Column="0" Grid.Row="1" Text="Software Libre" BackgroundColor="LimeGreen" Command="{Binding GoNextCard}" CommandParameter="LimeGreen"/>
-                <Button Grid.Column="0" Grid.Row="2" Text="Protección de Datos" BackgroundColor="LightSkyBlue" Command="{Binding GoNextCard}" CommandParameter="LightSkyBlue"/>
-                <Button Grid.Column="1" Grid.Row="0" Text="Privacidad" BackgroundColor="DeepPink" Command="{Binding GoNextCard}" CommandParameter="DeepPink"/>
-                <Button Grid.Column="1" Grid.Row="1" Text="Facts" BackgroundColor="Orange" Command="{Binding GoNextCard}" CommandParameter="Orange"/>
+                <Button Grid.Column="0" Grid.Row="0" Text="Brecha de Género" CornerRadius="10" BackgroundColor="Violet" Command="{Binding GoNextCard}" CommandParameter="Violet"/>
+                <Button Grid.Column="0" Grid.Row="1" Text="Software Libre" CornerRadius="10" BackgroundColor="LimeGreen" Command="{Binding GoNextCard}" CommandParameter="LimeGreen"/>
+                <Button Grid.Column="0" Grid.Row="2" Text="Protección de Datos" CornerRadius="10" BackgroundColor="LightSkyBlue" Command="{Binding GoNextCard}" CommandParameter="LightSkyBlue"/>
+                <Button Grid.Column="1" Grid.Row="0" Text="Privacidad" CornerRadius="10" BackgroundColor="DeepPink" Command="{Binding GoNextCard}" CommandParameter="DeepPink"/>
+                <Button Grid.Column="1" Grid.Row="1" Text="Facts" CornerRadius="10" BackgroundColor="Orange" Command="{Binding GoNextCard}" CommandParameter="Orange"/>
             </Grid>
         </StackLayout>
         <StackLayout Orientation="Horizontal">

@@ -7,13 +7,22 @@
              x:Class="EticaGame.Views.CardViews.QuestionCardView"
              NavigationPage.HasNavigationBar="False">
     <StackLayout>
-        <Label x:Name="Tema" HorizontalOptions="CenterAndExpand" FontSize="30" TextColor="Black"/>
+        <AbsoluteLayout>
+            <BoxView AbsoluteLayout.LayoutBounds="0, 10, 270, 5" Color="Black"/>
+            <BoxView AbsoluteLayout.LayoutBounds="0, 20, 260, 5" Color="Black"/>
+            <BoxView AbsoluteLayout.LayoutBounds="10, 0, 5, 90" Color="Black"/>
+            <BoxView AbsoluteLayout.LayoutBounds="20, 0, 5, 75" Color="Black"/>
+            <Label x:Name="Tema" HorizontalOptions="CenterAndExpand" FontSize="30" TextColor="Black" AbsoluteLayout.LayoutBounds="30, 25, AutoSize, AutoSize"/>
+        </AbsoluteLayout>
         <ScrollView Orientation="Vertical" x:Name="SV1">
             <StackLayout Padding="50" HorizontalOptions="CenterAndExpand">
                 <Label x:Name="Pregunta" TextColor="Black" FontSize="25"/>
                 <Label x:Name="Expl" TextColor="Black" FontSize="25"/>
             </StackLayout>
         </ScrollView>
+        <StackLayout HorizontalOptions="CenterAndExpand" x:Name="Box1">
+            <BoxView HeightRequest="3" Color="Black" WidthRequest="200"/>
+        </StackLayout>
         <ScrollView Orientation="Vertical" HorizontalOptions="CenterAndExpand">
             <StackLayout Padding="10" x:Name="Ans" HorizontalOptions="CenterAndExpand">
                 <Label Text="Respuestas: " TextColor="Black" FontSize="25"/>
@@ -25,14 +34,18 @@
             </StackLayout>
         </ScrollView>
         <StackLayout HorizontalOptions="CenterAndExpand">
-            <Label x:Name="CorrectTit" Text="Respuesta correcta:" TextColor="Black" FontAttributes="Bold" FontSize="20"/>
-            <Label x:Name="Correct" TextColor="Black" FontSize="25"/>
+            <BoxView HeightRequest="3" Color="Black" WidthRequest="200" x:Name="Box2"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <BoxView AbsoluteLayout.LayoutBounds="0, 0, 10, 0" Color="Black" WidthRequest="3" Margin="4"/>
             <StackLayout HorizontalOptions="CenterAndExpand">
+                <Label x:Name="CorrectTit" Text="Respuesta correcta:" HorizontalOptions="CenterAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="20"/>
+                <Label x:Name="Correct" HorizontalOptions="CenterAndExpand" TextColor="Black" FontSize="25"/>
                 <Button x:Name="ABton" Text="Mostrar Respuesta Correcta" TextColor="Black" FontAttributes="Bold" BackgroundColor="White" FontSize="20" Clicked="OnShowAnswerClicked"/>
             </StackLayout>
         </StackLayout>
         <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
-            <Button x:Name="Resp" Text="Respuesta" HorizontalOptions="FillAndExpand" FontAttributes="Bold" BackgroundColor="Brown" TextColor="White" Clicked="OnAnswerClicked"/>
+            <Button x:Name="Resp" Text="Resultado" HorizontalOptions="FillAndExpand" FontAttributes="Bold" BackgroundColor="Brown" TextColor="White" Clicked="OnAnswerClicked"/>
             <Button x:Name="Sig" Text="Siguiente Turno" HorizontalOptions="FillAndExpand" FontAttributes="Bold" BackgroundColor="DarkGoldenrod" TextColor="White" Command="{Binding NextTurn}" />
         </StackLayout>
     </StackLayout>
