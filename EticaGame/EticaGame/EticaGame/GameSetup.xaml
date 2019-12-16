@@ -8,13 +8,12 @@
 
     <StackLayout>
         <Label Text="eTICa-MENTE" FontSize="45" TextColor="Black" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
-        <Label Text="Por favor rellena los campos" FontSize="20"/>
         <StackLayout>
             <StackLayout HorizontalOptions="CenterAndExpand" 
                          Orientation="Horizontal">
                 <Label Text="Numero de equipos:" FontSize="25" TextColor="Black"/>
             </StackLayout>
-            <Picker x:Name="teams" Title="Equipos" TitleColor="OrangeRed" 
+            <Picker x:Name="teams" Title="Selecciona" TitleColor="OrangeRed" 
                         HorizontalOptions="CenterAndExpand" 
                         Margin="30"
                         SelectedIndexChanged="OnPickerSelectedIndexChanged">

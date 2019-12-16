@@ -4,14 +4,36 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="EticaGame.Views.CardViews.QuestionCardView">
+             x:Class="EticaGame.Views.CardViews.QuestionCardView"
+             NavigationPage.HasNavigationBar="False">
     <StackLayout>
-        <Label x:Name="Tema" HorizontalOptions="CenterAndExpand" FontSize="25" TextColor="Black"/>
-        <StackLayout>
-            <Label Text="Pregunta: " TextColor="Black"/>
-            <Label x:Name="Pregunta" TextColor="Black"/>
-            <Label Text="Respuesta: " TextColor="Black"/>
-            <Label x:Name="Respuesta" TextColor="Black"/>
+        <Label x:Name="Tema" HorizontalOptions="CenterAndExpand" FontSize="30" TextColor="Black"/>
+        <ScrollView Orientation="Vertical" x:Name="SV1">
+            <StackLayout Padding="50" HorizontalOptions="CenterAndExpand">
+                <Label x:Name="Pregunta" TextColor="Black" FontSize="25"/>
+                <Label x:Name="Expl" TextColor="Black" FontSize="25"/>
+            </StackLayout>
+        </ScrollView>
+        <ScrollView Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+            <StackLayout Padding="10" x:Name="Ans" HorizontalOptions="CenterAndExpand">
+                <Label Text="Respuestas: " TextColor="Black" FontSize="25"/>
+                <Label x:Name="R0" TextColor="Black" FontSize="20"/>
+                <Label x:Name="R1" TextColor="Black" FontSize="20"/>
+                <Label x:Name="R2" TextColor="Black" FontSize="20"/>
+                <Label x:Name="R3" TextColor="Black" FontSize="20"/>
+                <Label x:Name="Ausr" Text="{Binding UsrAnswer, Mode=OneWayToSource}" IsVisible="False"/>
+            </StackLayout>
+        </ScrollView>
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Label x:Name="CorrectTit" Text="Respuesta correcta:" TextColor="Black" FontAttributes="Bold" FontSize="20"/>
+            <Label x:Name="Correct" TextColor="Black" FontSize="25"/>
+            <StackLayout HorizontalOptions="CenterAndExpand">
+                <Button x:Name="ABton" Text="Mostrar Respuesta Correcta" TextColor="Black" FontAttributes="Bold" BackgroundColor="White" FontSize="20" Clicked="OnShowAnswerClicked"/>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+            <Button x:Name="Resp" Text="Respuesta" HorizontalOptions="FillAndExpand" FontAttributes="Bold" BackgroundColor="Brown" TextColor="White" Clicked="OnAnswerClicked"/>
+            <Button x:Name="Sig" Text="Siguiente Turno" HorizontalOptions="FillAndExpand" FontAttributes="Bold" BackgroundColor="DarkGoldenrod" TextColor="White" Command="{Binding NextTurn}" />
         </StackLayout>
     </StackLayout>
 </ContentPage>

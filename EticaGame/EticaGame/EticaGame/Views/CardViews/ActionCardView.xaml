@@ -5,12 +5,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="EticaGame.Views.CardViews.ActionCardView"
-             BackgroundColor="Red">
+             BackgroundColor="Red"
+             NavigationPage.HasNavigationBar="False">
     <StackLayout>
-        <Label x:Name="Accion" HorizontalOptions="CenterAndExpand" FontSize="25" TextColor="Black"/>
-        <StackLayout>
-            <Label Text="Pregunta: " TextColor="Black"/>
-            <Label x:Name="Explica" TextColor="Black"/>
+        <StackLayout Padding="40">
+            <Label x:Name="Accion" HorizontalOptions="CenterAndExpand" FontSize="35" TextColor="Black"/>
+            <Label x:Name="Explica" TextColor="Black" HorizontalOptions="CenterAndExpand" FontSize="25"/>
+            <Label  x:Name="Ausr" Text="{Binding UsrAnswer, Mode=OneWayToSource}" IsVisible="False"/>
+        </StackLayout>
+        <StackLayout VerticalOptions="EndAndExpand">
+            <Button Text="Siguiente Turno" HorizontalOptions="FillAndExpand" FontAttributes="Bold" BackgroundColor="DarkGoldenrod" FontSize="20" TextColor="White" Command="{Binding NextTurn}" CommandParameter="noParam"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>

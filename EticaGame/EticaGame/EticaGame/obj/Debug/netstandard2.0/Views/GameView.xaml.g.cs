@@ -17,11 +17,15 @@ namespace EticaGame.Views {
     public partial class GameView : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.CarouselView GVCarousel;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Label tocaTurno;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(GameView));
+            GVCarousel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.CarouselView>(this, "GVCarousel");
             tocaTurno = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "tocaTurno");
         }
     }

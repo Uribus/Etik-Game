@@ -45,5 +45,10 @@ namespace EticaGame.Views
                 await Navigation.PushModalAsync(new GameSetup());
             }
         }
+
+        void OnResetGameClicked(object sender, EventArgs e)
+        {
+            BindingContext = new GameViewModel(T, Navigation);
+        }
     }
 }

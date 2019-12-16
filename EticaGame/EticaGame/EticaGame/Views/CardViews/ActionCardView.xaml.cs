@@ -18,6 +18,7 @@ namespace EticaGame.Views.CardViews
             InitializeComponent();
             Accion.Text = carta.GetTitle();
             Explica.Text = carta.GetExplica();
+            Ausr.Text = "noParam";
         }
     }
 }
