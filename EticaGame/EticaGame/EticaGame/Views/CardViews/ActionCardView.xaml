@@ -25,7 +25,7 @@
             <Image Source="Dados.png" HeightRequest="200" WidthRequest="200"/>
         </StackLayout>
         <StackLayout VerticalOptions="EndAndExpand">
-            <Button Text="Siguiente Turno" HorizontalOptions="FillAndExpand" FontAttributes="Bold" BackgroundColor="DarkGoldenrod" FontSize="20" TextColor="White" Command="{Binding NextTurn}" CommandParameter="noParam"/>
+            <Button x:Name="SigBton" HorizontalOptions="FillAndExpand" FontAttributes="Bold" BackgroundColor="DarkGoldenrod" FontSize="20" TextColor="White" Command="{Binding NextTurn}" CommandParameter="noParam"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>

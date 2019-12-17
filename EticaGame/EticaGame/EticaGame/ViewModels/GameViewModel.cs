@@ -360,29 +360,36 @@ namespace EticaGame.ViewModels
         async void CheckAndGo(string answer)
         {
             bool tur = true;
-            if(usrAns != "noParam")
+            if(usrAns != "pasaTurno")
             {
-                bool go = await Application.Current.MainPage.DisplayAlert("Tu respuesta es: " + usrAns, "¿Continuar?", "Si", "No");
-                if(go)
+                if (usrAns != "noParam")
                 {
-                    if (usrAns == "SI")
+                    bool go = await Application.Current.MainPage.DisplayAlert("Tu respuesta es: " + usrAns, "¿Continuar?", "Si", "No");
+                    if (go)
                     {
-                        Equipos[TurnoTeam - 1].AddAcierto();
+                        if (usrAns == "SI")
+                        {
+                            Equipos[TurnoTeam - 1].AddAcierto();
+                        }
+                        else
+                        {
+                            Equipos[TurnoTeam - 1].AddFallo();
+                        }
                     }
                     else
                     {
-                        Equipos[TurnoTeam - 1].AddFallo();
+                        tur = false;
                     }
                 }
-                else 
+                if (tur)
                 {
-                    tur = false;
+                    ActualizarTurno();
+                    OnPropertyChanged(nameof(Turno));
+                    await Navigation.PopAsync();
                 }
             }
-            if(tur)
+            else 
             {
-                ActualizarTurno();
-                OnPropertyChanged(nameof(Turno));
                 await Navigation.PopAsync();
             }
         }

@@ -13,12 +13,23 @@ namespace EticaGame.Views.CardViews
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ActionCardView : ContentPage
     {
+        string Tema;
         public ActionCardView(ACard carta)
         {
             InitializeComponent();
-            Accion.Text = carta.GetTitle();
+            Tema = carta.GetTitle();
+            Accion.Text = Tema;
             Explica.Text = carta.GetExplica();
-            Ausr.Text = "noParam";
+            if(Tema == "¡Tira otra vez!")
+            {
+                Ausr.Text = "pasaTurno";
+                SigBton.Text = "Tira otra vez";
+            }
+            else
+            {
+                Ausr.Text = "noParam";
+                SigBton.Text = "Siguiente Turno";
+            }
         }
     }
 }
