@@ -4,16 +4,23 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="EticaGame.Views.InfoGame">
-
+             x:Class="EticaGame.Views.InfoGame"
+             Title="Resumen">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Info del juego"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Label Text="kajefnjkebfnksjehbfnjerhgheaksdjbfkasjhdfbalsjek falejkfahlnsekj fahlweijkanflskejf lajsehfnijkehrglnjekr gsliergjlerjbgljsk"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="StartAndExpand" />
-        </StackLayout>
+        <ListView ItemsSource="{Binding Equipos}" RowHeight="100" SeparatorColor="DarkBlue">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding Name}" TextColor="Black" FontSize="30"/>
+                            <StackLayout Orientation="Horizontal" Padding="10">
+                                <Label Text="{Binding Aciertos}" TextColor="ForestGreen" FontSize="20"/>
+                                <Label Text="{Binding Fallos}" TextColor="Red" FontSize="20"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
 </ContentPage>

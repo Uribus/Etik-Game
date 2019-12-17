@@ -89,13 +89,122 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\drawable\" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\Icono.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EticaGame\EticaGame.csproj">
       <Project>{89C5E974-853F-4399-99E9-426DAD7D7C03}</Project>
       <Name>EticaGame</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-hdpi\Icono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\Icono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xhdpi\Icono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\Icono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mipmap-anydpi-v26\SoftwareLibre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mipmap-hdpi\SoftwareLibre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mipmap-mdpi\SoftwareLibre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mipmap-xhdpi\SoftwareLibre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mipmap-xxhdpi\SoftwareLibre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mipmap-xxxhdpi\SoftwareLibre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="..\EticaGame\Icons\ProteccionDeDatos.png">
+      <Link>Resources\drawable\ProteccionDeDatos.png</Link>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mipmap-anydpi-v26\ProteccionDeDatos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mipmap-hdpi\ProteccionDeDatos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mipmap-mdpi\ProteccionDeDatos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mipmap-xhdpi\ProteccionDeDatos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mipmap-xxhdpi\ProteccionDeDatos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mipmap-xxxhdpi\ProteccionDeDatos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mipmap-anydpi-v26\Curiosidades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mipmap-hdpi\Curiosidades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mipmap-mdpi\Curiosidades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mipmap-xhdpi\Curiosidades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mipmap-xxhdpi\Curiosidades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mipmap-xxxhdpi\Curiosidades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="..\EticaGame\Icons\Privacidad.png">
+      <Link>Resources\drawable\Privacidad.png</Link>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="..\EticaGame\Icons\BrechaDeGenero.png">
+      <Link>Resources\drawable\BrechaDeGenero.png</Link>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="..\EticaGame\Icons\Icono.png">
+      <Link>Resources\drawable\Icono.png</Link>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="..\EticaGame\Icons\SoftwareLibre.png">
+      <Link>Resources\drawable\SoftwareLibre.png</Link>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="..\EticaGame\Icons\Curiosidades.png">
+      <Link>Resources\drawable\Curiosidades.png</Link>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="..\EticaGame\Icons\Dados.png">
+      <Link>Resources\drawable\Dados.png</Link>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="..\EticaGame\Icons\Nombre.png">
+      <Link>Resources\drawable\Nombre.png</Link>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

@@ -15,6 +15,7 @@ namespace EticaGame.Views.CardViews
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class QuestionCardView : ContentPage
     {
+        string CardTheme;
         string Question;
         string A0;
         string A1;
@@ -26,7 +27,8 @@ namespace EticaGame.Views.CardViews
         {
             InitializeComponent();
             BackgroundColor = color;
-            Tema.Text = carta.GetTema();
+            CardTheme = carta.GetTema();
+            Tema.Text = CardTheme;
             Question = carta.GetPregunta();
             Correcta = carta.GetRespuesta();
             A0 = carta.GetR0();
@@ -34,7 +36,32 @@ namespace EticaGame.Views.CardViews
             A2 = carta.GetR2();
             A3 = carta.GetR3();
             Sig.CommandParameter = AnswerUsr;
+            SetBackground();
             SetLabels();  
+        }
+
+        void SetBackground()
+        {
+            
+            switch (CardTheme)
+            {
+                case "Brecha":
+                    Img.Source = "BrechaDeGenero.png"; 
+                    break;
+                case "Software":
+                    Img.Source = "SoftwareLibre.png";
+                    break;
+                case "Proteccion":
+                    Img.Source = "ProteccionDeDatos.png";
+                    break;
+                case "Privacidad":
+                    Img.Source = "Privacidad.png";
+                    break;
+                case "Facts":
+                    Img.Source = "Curiosidades.png";
+                    break;
+            }
+            
         }
 
         void SetLabels()
@@ -90,6 +117,7 @@ namespace EticaGame.Views.CardViews
             Correct.IsVisible = true;
             Correct.Text = Correcta;
             ABton.IsEnabled = false;
+            ABton.IsVisible = false;
         }
 
         async void OnAnswerClicked(object sender, EventArgs e)

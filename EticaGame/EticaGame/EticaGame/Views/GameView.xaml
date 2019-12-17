@@ -9,7 +9,7 @@
              FlowDirection="LeftToRight"
              NavigationPage.HasNavigationBar="False">
     
-    <StackLayout BackgroundColor="LightGray">
+    <StackLayout BackgroundColor="White">
         <StackLayout HorizontalOptions="CenterAndExpand">
             <Grid>
                 <Grid.RowDefinitions>
@@ -21,53 +21,32 @@
                     <ColumnDefinition Width="85"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Text="Info" Clicked="OnInfoClicked" HorizontalOptions="StartAndExpand" BackgroundColor="Black" TextColor="Yellow" FontAttributes="Bold"/>
+                <Button Grid.Column="0" Text="Resumen" Clicked="OnInfoClicked" HorizontalOptions="StartAndExpand" BackgroundColor="Black" TextColor="Yellow" FontAttributes="Bold"/>
                 <Button Grid.Column="3" Text="Reglas" Clicked="OnReglasClicked" HorizontalOptions="EndAndExpand" BackgroundColor="Black" TextColor="Yellow" FontAttributes="Bold"/>
             </Grid>
         </StackLayout>
-        <CarouselView x:Name="GVCarousel" ItemsSource="{Binding Equipos}" PeekAreaInsets="90">
-            <CarouselView.ItemsLayout>
-                <LinearItemsLayout Orientation="Horizontal"/>
-            </CarouselView.ItemsLayout>
-            <CarouselView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout>
-                        <Frame HasShadow="True" BorderColor="BlueViolet"
-                               CornerRadius="5" Margin="20">
-                            <StackLayout>
-                                <Label Text="{Binding Name}" FontAttributes="Bold"
-                                   FontSize="Medium" TextColor="Black" 
-                                   VerticalOptions="StartAndExpand"/>
-                                <Label Text="{Binding Aciertos}" TextColor="ForestGreen"/>
-                                <Label Text="{Binding Fallos}" TextColor="Red"/>
-                            </StackLayout>
-                        </Frame>
-                    </StackLayout>
-                </DataTemplate>
-            </CarouselView.ItemTemplate>
-        </CarouselView>
         <Label Text="Turno:" HorizontalOptions="CenterAndExpand" FontSize="30" TextColor="Black" HeightRequest="40"/>
         <Label x:Name="tocaTurno" Text="{Binding Turno}" HeightRequest="140" HorizontalOptions="CenterAndExpand" FontSize="75" TextColor="Black"/>
-        <StackLayout HorizontalOptions="Center" VerticalOptions="StartAndExpand" HeightRequest="200">
-            <Grid HorizontalOptions="Center" Margin="12"> 
+        <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" HeightRequest="200">
+            <Grid HorizontalOptions="Center" RowSpacing="12" Margin="12"> 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="180"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
                 </Grid.RowDefinitions>
-                <Button Grid.Column="0" Grid.Row="0" Text="Brecha de Género" CornerRadius="10" BackgroundColor="Violet" Command="{Binding GoNextCard}" CommandParameter="Violet"/>
-                <Button Grid.Column="0" Grid.Row="1" Text="Software Libre" CornerRadius="10" BackgroundColor="LimeGreen" Command="{Binding GoNextCard}" CommandParameter="LimeGreen"/>
-                <Button Grid.Column="0" Grid.Row="2" Text="Protección de Datos" CornerRadius="10" BackgroundColor="LightSkyBlue" Command="{Binding GoNextCard}" CommandParameter="LightSkyBlue"/>
-                <Button Grid.Column="1" Grid.Row="0" Text="Privacidad" CornerRadius="10" BackgroundColor="DeepPink" Command="{Binding GoNextCard}" CommandParameter="DeepPink"/>
-                <Button Grid.Column="1" Grid.Row="1" Text="Facts" CornerRadius="10" BackgroundColor="Orange" Command="{Binding GoNextCard}" CommandParameter="Orange"/>
+                <Button Grid.Column="0" BorderWidth="2" BorderColor="Black" Grid.Row="0" Text="Brecha de Género" CornerRadius="10" BackgroundColor="Violet" Command="{Binding GoNextCard}" CommandParameter="Violet"/>
+                <Button Grid.Column="0" BorderWidth="2" BorderColor="Black" Grid.Row="1" Text="Software Libre" CornerRadius="10" BackgroundColor="LimeGreen" Command="{Binding GoNextCard}" CommandParameter="LimeGreen"/>
+                <Button Grid.Column="0" BorderWidth="2" BorderColor="Black" Grid.Row="2" Text="Protección de Datos" CornerRadius="10" BackgroundColor="DeepPink" Command="{Binding GoNextCard}" CommandParameter="DeepPink"/>
+                <Button Grid.Column="1" BorderWidth="2" BorderColor="Black" Grid.Row="0" Text="Privacidad" CornerRadius="10" BackgroundColor="LightSkyBlue" Command="{Binding GoNextCard}" CommandParameter="LightSkyBlue"/>
+                <Button Grid.Column="1" BorderWidth="2" BorderColor="Black" Grid.Row="1" Text="Facts" CornerRadius="10" BackgroundColor="Orange" Command="{Binding GoNextCard}" CommandParameter="Orange"/>
             </Grid>
         </StackLayout>
-        <StackLayout Orientation="Horizontal">
-            <Button Text=" Seleccion de Equipos" BackgroundColor="OrangeRed" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Clicked="OnNewGameClicked"/>
+        <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+            <Button Text=" Seleccion de Equipos" BackgroundColor="OrangeRed" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Clicked="OnNewGameClicked"/> 
             <Button Text="Nueva Partida" BackgroundColor="Red" FontAttributes="Bold" Clicked="OnResetGameClicked" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
     </StackLayout>

@@ -21,6 +21,9 @@
         <StackLayout HorizontalOptions="CenterAndExpand">
             <BoxView  HeightRequest="3" Color="Black" WidthRequest="200"/>
         </StackLayout>
+        <StackLayout Margin="60">
+            <Image Source="Dados.png" HeightRequest="200" WidthRequest="200"/>
+        </StackLayout>
         <StackLayout VerticalOptions="EndAndExpand">
             <Button Text="Siguiente Turno" HorizontalOptions="FillAndExpand" FontAttributes="Bold" BackgroundColor="DarkGoldenrod" FontSize="20" TextColor="White" Command="{Binding NextTurn}" CommandParameter="noParam"/>
         </StackLayout>

@@ -24,7 +24,8 @@ namespace EticaGame.Views
 
         async void OnInfoClicked(object sender, EventArgs e) 
         {
-            await Navigation.PushAsync(new InfoGame());
+            var res = new InfoGame() { BindingContext = this.BindingContext,};
+            await Navigation.PushAsync(res);
         }
 
         async void OnReglasClicked(object sender, EventArgs e)

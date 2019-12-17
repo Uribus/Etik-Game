@@ -133,4 +133,9 @@
       <Name>EticaGame</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="..\EticaGame\Icons\Icono.png">
+      <Link>Resources\Icono.png</Link>
+    </BundleResource>
+  </ItemGroup>
 </Project>

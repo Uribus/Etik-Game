@@ -36,13 +36,16 @@
         <StackLayout HorizontalOptions="CenterAndExpand">
             <BoxView HeightRequest="3" Color="Black" WidthRequest="200" x:Name="Box2"/>
         </StackLayout>
-        <StackLayout Orientation="Horizontal">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
             <BoxView AbsoluteLayout.LayoutBounds="0, 0, 10, 0" Color="Black" WidthRequest="3" Margin="4"/>
-            <StackLayout HorizontalOptions="CenterAndExpand">
-                <Label x:Name="CorrectTit" Text="Respuesta correcta:" HorizontalOptions="CenterAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="20"/>
-                <Label x:Name="Correct" HorizontalOptions="CenterAndExpand" TextColor="Black" FontSize="25"/>
-                <Button x:Name="ABton" Text="Mostrar Respuesta Correcta" TextColor="Black" FontAttributes="Bold" BackgroundColor="White" FontSize="20" Clicked="OnShowAnswerClicked"/>
-            </StackLayout>
+            <ScrollView>
+                <StackLayout HorizontalOptions="CenterAndExpand">
+                    <Image x:Name="Img" HeightRequest="180" />
+                    <Label x:Name="CorrectTit" Text="Respuesta correcta:" HorizontalOptions="CenterAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="20"/>
+                    <Label x:Name="Correct" HorizontalOptions="CenterAndExpand" TextColor="Black" FontSize="25"/>
+                    <Button x:Name="ABton" Text="Mostrar Respuesta Correcta" TextColor="Black" FontAttributes="Bold" BackgroundColor="White" FontSize="20" Clicked="OnShowAnswerClicked"/>
+                </StackLayout>
+            </ScrollView>
         </StackLayout>
         <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
             <Button x:Name="Resp" Text="Resultado" HorizontalOptions="FillAndExpand" FontAttributes="Bold" BackgroundColor="Brown" TextColor="White" Clicked="OnAnswerClicked"/>

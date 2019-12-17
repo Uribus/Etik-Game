@@ -211,7 +211,10 @@ namespace EticaGame.ViewModels
             CartasFacts.Add(new QCard("¿Qué navegador activará por defecto el bloqueo de fingerprints? (Técnica de rastreo con la que identificar usuarios a partir de datos técnicos del equipo)", tipo, "", "#", "", "", "Mozilla Firefox"));
             CartasFacts.Add(new QCard("¿Qué aplicación puede cancelarte el acceso a todo o parte de su servicio si tu cuenta no es comercialmente viable?", tipo, "", "", "", "", "YouTube"));
             CartasFacts.Add(new QCard("¿Qué compañía ha desarrollado una cama eléctrica que podemos controlar por voz?", tipo, "", "#", "", "", "Xiaomi"));
-           
+            CartasFacts.Add(new QCard("Debate", tipo, "Un premio informático que haga mención a la primera computadora ENIAC, ¿debería de tener el nombre de los ingenieros que la diseñaron o el de las mujeres que la programaron ? ", "", "", "", ""));
+            CartasFacts.Add(new QCard("Debate", tipo, "En un periodo de 5 años, ¿Los automoviles tendrán la inteligencia artificial necesaria como para poder conducir solos?", "", "", "", ""));
+            CartasFacts.Add(new QCard("Debate", tipo, "¿Debería de dotarse al ejercito con armas inteligentes que actúen por sí solas?", "", "", "", ""));
+
         }
         //gameflow control cards
         void LLenarListaEspeciales()
@@ -277,12 +280,12 @@ namespace EticaGame.ViewModels
                     if (ran == CartasSoftware.Count) { ran -= 1; }
                     krta = CartasSoftware[ran % CartasSoftware.Count];
                     break;
-                case "LightSkyBlue":
+                case "DeepPink":
                     if (CartasProteccion.Count == 0) { return null; }
                     if (ran == CartasProteccion.Count) { ran -= 1; }
                     krta = CartasProteccion[ran % CartasProteccion.Count];
                     break;
-                case "DeepPink":
+                case "LightSkyBlue":
                     if (CartasPrivacidad.Count == 0) { return null; }
                     if (ran == CartasPrivacidad.Count) { ran -= 1; }
                     krta = CartasPrivacidad[ran % CartasPrivacidad.Count];
@@ -328,7 +331,7 @@ namespace EticaGame.ViewModels
         async void CallCardView(string colorBton)
         {
             int ran = RandomNumber(0, 1000);
-            if (ran <= 150)
+            if (ran <= 790)
             {
                 ColorTypeConverter converter = new ColorTypeConverter();
                 Color color = (Color)(converter.ConvertFromInvariantString(colorBton));
@@ -356,20 +359,32 @@ namespace EticaGame.ViewModels
 
         async void CheckAndGo(string answer)
         {
+            bool tur = true;
             if(usrAns != "noParam")
             {
-                if (usrAns == "SI")
+                bool go = await Application.Current.MainPage.DisplayAlert("Tu respuesta es: " + usrAns, "¿Continuar?", "Si", "No");
+                if(go)
                 {
-                    Equipos[TurnoTeam - 1].AddAcierto();
+                    if (usrAns == "SI")
+                    {
+                        Equipos[TurnoTeam - 1].AddAcierto();
+                    }
+                    else
+                    {
+                        Equipos[TurnoTeam - 1].AddFallo();
+                    }
                 }
                 else 
                 {
-                    Equipos[TurnoTeam - 1].AddFallo();
+                    tur = false;
                 }
             }
-            ActualizarTurno();
-            OnPropertyChanged(nameof(Turno));
-            await Navigation.PopAsync();
+            if(tur)
+            {
+                ActualizarTurno();
+                OnPropertyChanged(nameof(Turno));
+                await Navigation.PopAsync();
+            }
         }
 
         public string Turno
