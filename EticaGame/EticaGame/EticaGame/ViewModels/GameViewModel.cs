@@ -146,9 +146,9 @@ namespace EticaGame.ViewModels
             CartasProteccion.Add(new QCard("El interesado tendrá derecho a oponerse en cualquier momento, por motivos relacionados con su situación particular, a qué datos personales que le conciernan sean objeto de un tratamiento basado en el artículo 6, apartado 1, letras e) o f), en la primera frase del artículo 6, apartado 4 leída conjuntamente con el artículo 6, apartado 1, letra e) o en la segunda frase del artículo 6, apartado 4", tipo, "Verdadero", "Falso", "", "", "Verdadero"));
             CartasProteccion.Add(new QCard("El tratamiento de datos personales debe estar concebido para servir a la humanidad", tipo, "Verdadero", "Falso", "", "", "Verdadero"));
             CartasProteccion.Add(new QCard("Todos los datos se tratan de la misma manera, sin excepción ninguna.", tipo, "Verdadero", "Falso", "", "", "Considerando 51 los datos personales que, por su naturaleza, son particularmente sensibles en relación con los derechos y las libertades fundamentales, merecen especial protección ya que el contexto de su tratamiento podría entrañar importantes riesgos para los derechos y las libertades fundamentales."));
-            CartasProteccion.Add(new QCard("¿En qué fecha se aprobó la anterior regulación de Protección de datos?", tipo, "El 24 de octubre de 1995", "#", "", "", "El 24 de octubre de 1995"));
+            CartasProteccion.Add(new QCard("¿En qué fecha entró en vigor la LOPD en España?", tipo, "El 13 de diciembre de 1993", "#", "", "", "El 13 de diciembre de 1999"));
             CartasProteccion.Add(new QCard("¿Qué institución es la encargada de comprobar que se cumple el LOPD?", tipo, "", "#", "", "", "La Agencia Española de protección de Datos"));
-            CartasProteccion.Add(new QCard("¿Cuando entró en vigor la LOPD?", tipo, "", "#", "", "", "El 6 de diciembre de 2018"));
+            CartasProteccion.Add(new QCard("¿Cuándo fue la útlima actualización de la LOPD?", tipo, "", "#", "", "", "El 6 de diciembre de 2018"));
             CartasProteccion.Add(new QCard("¿Cual es la principal diferencia entre LOPD y RGPD?", tipo, "", "#", "", "", "La LOPD es de carácter nacional y el RGPD es una regulación europea"));
             CartasProteccion.Add(new QCard("Tratar o ceder datos especialmente protegidos es una infracción leve según la LOPD.", tipo, "Verdadero", "Falso", "", "", "Falso"));
             CartasProteccion.Add(new QCard("¿Que se denomina información de carácter personal?", tipo, "", "#", "", "", "Cualquier información concerniente a personas físicas identificadas o identificables, relativa a su identidad como a su existencia y ocupaciones"));
@@ -161,7 +161,6 @@ namespace EticaGame.ViewModels
             CartasProteccion.Add(new QCard("Debate", tipo, "¿Es correcto que el RGPD establezca multas de hasta 20 millones de euros o hasta un 4% del volumen del negocio anterior?", "", "", "", ""));
         }
         //data privacy questions
-        //PENDIENTE
         void LlenarListaPrivacidad(string tipo)
         {
             CartasPrivacidad.Add(new QCard("¿En qué consiste el ad tracking?", tipo, "", "#", "", "", "Tipo de rastreo usando cookies que crea un perfil del usuario con el que determinar que le gusta y que no"));
@@ -331,7 +330,8 @@ namespace EticaGame.ViewModels
         async void CallCardView(string colorBton)
         {
             int ran = RandomNumber(0, 1000);
-            if (ran <= 790)
+            //set to 1000 for testing, in normal game it should be around 850
+            if (ran <= 1000)
             {
                 ColorTypeConverter converter = new ColorTypeConverter();
                 Color color = (Color)(converter.ConvertFromInvariantString(colorBton));
@@ -394,6 +394,7 @@ namespace EticaGame.ViewModels
             }
         }
 
+        //define two public strings for items to be accessible(bindable) from other classes
         public string Turno
         {
             set

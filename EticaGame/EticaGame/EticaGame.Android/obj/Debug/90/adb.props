@@ -1,2 +1,2 @@
-AdbTarget=-s ff0581dd
+AdbTarget=-s emulator-5554
 AdbOptions=
